@@ -21,7 +21,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
     <script src="https://apis.google.com/js/api.js"></script>
 
     <script>
-        function handleSubmit() {
+        function initClient() {
             gapi.client.init({
                 'apiKey': 'AIzaSyDCatkOVvCfOjFK90y_YX_kq9n8UJYLQIc',
                 'clientId': '248500251407-d8s95cuiovgnrjav0tfbg9iqvvqlhmmu.apps.googleusercontent.com',
@@ -30,23 +30,26 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
             }).then(function() {
                 gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
                 updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-
-                gapi.client.sheets.spreadsheets.values.append({
-                    spreadsheetId: '1ziLOui-8FCinAu0pgIyuo_OCYCE-e7a_2Fku1Rn0oxs',
-                    range: 'Sheet1!A1:C1',
-                    valueInputOption: 'USER_ENTERED',
-                    resource: {
-                        values: [
-                            [document.getElementById('name-319').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
-                        ]
-                    }
-                }).then(function(response) {
-                    console.log('Data appended successfully');
-                }, function(error) {
-                    console.error('Error appending data:', error.result.error.message);
-                });
             });
         }
+
+        function handleSubmit() {
+            gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: '1ziLOui-8FCinAu0pgIyuo_OCYCE-e7a_2Fku1Rn0oxs',
+                range: 'Sheet1!A1:C1',
+                valueInputOption: 'USER_ENTERED',
+                resource: {
+                    values: [
+                        [document.getElementById('name-319').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
+                    ]
+                }
+            }).then(function(response) {
+                console.log('Data appended successfully');
+            }, function(error) {
+                console.error('Error appending data:', error.result.error.message);
+            });
+        }
+
 
         function handleClientLoad() {
             gapi.load('client:auth2', initClient);
