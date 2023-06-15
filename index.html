@@ -19,7 +19,36 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        function postToGoogle() {
+            //Xử lý lấy dữ liệu các input vào biến tương ứng thông qua ID của input
+            var name = $("#nameField").val();
+            var email = $("#emailField").val();
+            var mess = $("#messField").val();
+            //Đoạn giữa này có thể sử dụng để validate dữ liệu 1 lần nữa hoăc... bỏ qua nhé :D
 
+            //Xử lý gửi dữ liệu lên form
+            $.ajax({
+                //Chỉ định đích gửi dữ liệu đến: là form response đã tạo ở trên
+                url: "https://docs.google.com/forms/d/e/1FAIpQLScCRyaKATxc5qwoAxF_mTOTResSlsoVvdO54IjIG4NLCIS-kg/formResponse?",
+                //URL lấy từ link đã note ở trên nhé
+                data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
+                    "entry.881773734": name,
+                    "entry.1618212381": email,
+                    "entry.273781435": mess
+                },
+                type: "POST",
+                dataType: "jsonp", //các bạn có thể để xml, nhưng khi bật console lên sẽ thấy báo đỏ lòm vì ko cho cross, còn cái này nó vẫn cảnh báo nhưng màu xám thôi, ko đỏ :v
+                success: function(d) {}, //do đã bảo ở trên là nó ko cho cross đâu, nên khi gửi data xong ko trả về success được, ko cần điền cái này nhé
+                error: function(x, y, z) {
+                    $('#success-msg').show(); //hiện ra cái mess báo thành công khi gửi xong
+                }
+            });
+
+            return false;
+        }
+    </script>
     <script>
         function initClient() {
             gapi.client.init({
@@ -40,7 +69,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                 valueInputOption: 'USER_ENTERED',
                 resource: {
                     values: [
-                        [document.getElementById('name-319').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
+                        [document.getElementById('name-319a').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
                     ]
                 }
             }).then(function(response) {
