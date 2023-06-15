@@ -63,19 +63,33 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
         }
 
         function handleSubmit() {
-            gapi.client.sheets.spreadsheets.values.append({
-                spreadsheetId: '1ziLOui-8FCinAu0pgIyuo_OCYCE-e7a_2Fku1Rn0oxs',
-                range: 'Sheet1!A1:C1',
-                valueInputOption: 'USER_ENTERED',
-                resource: {
-                    values: [
-                        [document.getElementById('name-319a').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
-                    ]
-                }
-            }).then(function(response) {
-                console.log('Data appended successfully');
-            }, function(error) {
-                console.error('Error appending data:', error.result.error.message);
+            gapi.auth2.getAuthInstance().signIn().then(function() {
+                var user = gapi.auth2.getAuthInstance().currentUser.get();
+                var authResponse = user.getAuthResponse();
+                var accessToken = authResponse.access_token;
+
+                gapi.client.init({
+                    apiKey: 'YOUR_API_KEY',
+                    clientId: 'YOUR_CLIENT_ID',
+                    discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+                    scope: 'https://www.googleapis.com/auth/spreadsheets',
+                    accessToken: accessToken
+                }).then(function() {
+                    gapi.client.sheets.spreadsheets.values.append({
+                        spreadsheetId: '1ziLOui-8FCinAu0pgIyuo_OCYCE-e7a_2Fku1Rn0oxs',
+                        range: 'Sheet1!A1:C1',
+                        valueInputOption: 'USER_ENTERED',
+                        resource: {
+                            values: [
+                                [document.getElementById('name-319a').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
+                            ]
+                        }
+                    }).then(function(response) {
+                        console.log('Data appended successfully');
+                    }, function(error) {
+                        console.error('Error appending data:', error.result.error.message);
+                    });
+                });
             });
         }
 
