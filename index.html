@@ -17,7 +17,32 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        function handleSubmit() {
+            gapi.client.init({
+                apiKey: 'AIzaSyDCatkOVvCfOjFK90y_YX_kq9n8UJYLQIc',
+                clientId: '248500251407-d8s95cuiovgnrjav0tfbg9iqvvqlhmmu.apps.googleusercontent.com',
+                discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+                scope: 'https://www.googleapis.com/auth/spreadsheets',
+            }).then(function() {
+                gapi.client.sheets.spreadsheets.values.append({
+                    spreadsheetId: '1ziLOui-8FCinAu0pgIyuo_OCYCE-e7a_2Fku1Rn0oxs',
+                    range: 'Sheet1!A1:C1',
+                    valueInputOption: 'USER_ENTERED',
+                    resource: {
+                        values: [
+                            [document.getElementById('name-319').value, document.getElementById('email-319a').value, document.getElementById('message-319a').value]
+                        ]
+                    }
+                }).then(function(response) {
+                    console.log('Data appended successfully');
+                }, function(error) {
+                    console.error('Error appending data:', error.result.error.message);
+                });
+            });
+        }
+    </script>
 
 
 
@@ -600,6 +625,35 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                                         <input type="hidden" value="" name="recaptchaResponse">
                                         <input type="hidden" name="formServices" value="005deb93bfd18f2f6ae693a33cb2af4e">
                                     </form>
+
+                                    <form onsubmit="handleSubmit()" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
+                                        <div class="u-form-email u-form-group u-form-partition-factor-2">
+                                            <label for="email-319a" class="u-label u-text-body-alt-color u-label-1">Email</label>
+                                            <input type="email" placeholder="Enter a valid email address" id="email-319a" name="email" class="u-input u-input-rectangle u-input-1" required="">
+                                        </div>
+                                        <div class="u-form-group u-form-name u-form-partition-factor-2">
+                                            <label for="name-319a" class="u-label u-text-body-alt-color u-label-2">Name</label>
+                                            <input type="text" placeholder="Enter your Name" id="name-319a" name="name" class="u-input u-input-rectangle u-input-2" required="">
+                                        </div>
+                                        <div class="u-form-address u-form-group u-form-group-3">
+                                            <label for="address-452f" class="u-label u-text-body-alt-color u-label-3">Address</label>
+                                            <input type="text" placeholder="Enter your address" id="address-452f" name="address" class="u-input u-input-rectangle u-input-3" required="">
+                                        </div>
+                                        <div class="u-form-group u-form-message">
+                                            <label for="message-319a" class="u-label u-text-body-alt-color u-label-4">Message</label>
+                                            <textarea placeholder="Enter your message" rows="4" cols="50" id="message-319a" name="message" class="u-input u-input-rectangle u-input-4" required=""></textarea>
+                                        </div>
+                                        <div class="u-align-left u-form-group u-form-submit">
+                                            <a href="#" class="u-active-white u-border-none u-btn u-btn-submit u-button-style u-hover-white u-palette-3-base u-btn-2">Submit</a>
+                                            <input type="submit" value="submit" class="u-form-control-hidden">
+                                        </div>
+                                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                                        <input type="hidden" value="" name="recaptchaResponse">
+                                        <input type="hidden" name="formServices" value="005deb93bfd18f2f6ae693a33cb2af4e">
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -614,7 +668,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                 <h3 class="u-align-center u-text u-text-1">Get the Good Stuff</h3>
                 <p class="u-align-center u-text u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
                 <div class="u-expanded-width u-form u-form-1">
-                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form">
+                    <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;">
                         <div class="u-form-group u-form-name">
                             <label for="name-31f5" class="u-form-control-hidden u-label">Name</label>
                             <input type="text" placeholder="Enter your Name" id="name-31f5" name="name" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required="">
@@ -628,7 +682,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                             <textarea placeholder="Enter your message" rows="4" cols="50" id="message-31f5" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required=""></textarea>
                         </div>
                         <div class="u-align-center u-form-group u-form-submit">
-                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-hover-black u-palette-2-base u-btn-1">Submit</a>
+                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-hover-black u-palette-2-base u-btn-1" onclick="handleSubmit()">Submit</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                         </div>
                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
