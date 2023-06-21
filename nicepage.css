@@ -48437,7 +48437,7 @@ blockquote {
 .u-header .u-image-1 {
     width: 64px;
     height: 32px;
-    margin: 22px auto 0 0;
+    padding-top: 10px;
 }
 
 .u-header .u-logo-image-1 {
@@ -48446,7 +48446,7 @@ blockquote {
 }
 
 .u-header .u-menu-1 {
-    margin: -32px 0 22px auto;
+    margin: -68px 0 42px auto;
 }
 
 .u-header .u-nav-1 {
