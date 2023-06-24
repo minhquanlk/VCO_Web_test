@@ -172,6 +172,19 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
             </nav>
         </div>
     </header>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        var screenWidth = window.innerWidth;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos && screenWidth < 600) {
+                document.getElementById("sec-80ad").classList.remove("header-hidden");
+            } else if (prevScrollpos <= currentScrollPos && screenWidth < 600) {
+                document.getElementById("sec-80ad").classList.add("header-hidden");
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
     <section class="u-align-left u-clearfix u-image u-shading u-section-1" id="carousel_cbf3" data-image-width="1620" data-image-height="1080">
         <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
             <div class="u-palette-3-base u-shape u-shape-circle u-shape-1"></div>
