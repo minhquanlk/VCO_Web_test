@@ -174,14 +174,26 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
     </header>
     <script>
         var prevScrollpos = window.pageYOffset;
+        var headerHeight = document.getElementById("sec-80ad").offsetHeight;
         var screenWidth = window.innerWidth;
+        var total = 0;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos && screenWidth < 600) {
-                document.getElementById("sec-80ad").classList.remove("header-hidden");
-            } else if (prevScrollpos <= currentScrollPos && screenWidth < 600) {
-                document.getElementById("sec-80ad").classList.add("header-hidden");
+            var scrollDistance = prevScrollpos - currentScrollPos;
+            total += scrollDistance;
+            if (total < 0) {
+                document.getElementById("sec-80ad").style.transform = "translateY(" + total + "px)";
             }
+
+            if (total < -headerHeight) {
+                document.getElementById("sec-80ad").style.transform = "translateY(" + -headerHeight + "px)";
+                total = -120;
+            }
+            if (total > 0) {
+                document.getElementById("sec-80ad").style.transform = "translateY(" + 0 + "px)";
+                total = 0;
+            }
+
             prevScrollpos = currentScrollPos;
         }
     </script>
