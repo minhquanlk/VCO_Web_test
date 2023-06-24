@@ -51,6 +51,9 @@
                 }
                 
                 @media (max-width: 767px) {
+                    .u-header .u-sheet-1 {
+                        min-height: 60px;
+                    }
                     .u-header .u-image-1 {
                         width: 50px;
                         height: auto;
