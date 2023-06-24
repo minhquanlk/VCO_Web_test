@@ -52,11 +52,12 @@
                 
                 @media (max-width: 767px) {
                     .u-header .u-image-1 {
-                        width: 70px;
+                        width: 50px;
                         height: auto;
+                        margin-top: -10px;
                     }
                     .u-header .u-menu-1 {
-                        margin: -50px 0 30px auto;
+                        margin: -40px 0 10px auto;
                     }
                 }
                 /* .u-header .u-menu-1 {
