@@ -33,23 +33,34 @@
                     top: 0;
                     left: 0;
                     right: 0;
-                    transition: transform 0.3s;
                     transform: translateY(0);
                     z-index: 999;
                 }
                 
-                @media (max-width: 1199px) {
-                    .u-header .u-nav-container {
+                @media (min-width: 1px) and (max-width: 1199px) {
+                    .u-header .u-nav-container .u-nav-flex {
                         display: none;
                     }
                     .u-header .menu-collapse {
                         display: block;
                     }
+                    /* .u-nav-dropdown-collapse {
+                        display: block;
+                    } */
                 }
+                /* @media (min-width: 1200px) {
+                    .u-nav-dropdown-collapse {
+                        display: none;
+                    }
+                } */
                 
                 .u-header .u-image-1 {
                     width: 100px;
                     height: auto;
+                }
+                
+                .u-header .menu-collapse {
+                    margin-right: 15px;
                 }
                 
                 @media (max-width: 767px) {
@@ -90,6 +101,19 @@
                 
                 .u-nav-dropdown .earth-icon {
                     padding: 5px;
+                }
+                
+                @media (max-width: 575px) {
+                    .u-nav-dropdown {
+                        margin-right: 0px;
+                        font-size: 13px;
+                    }
+                    .u-nav-dropdown select {
+                        font-size: 13px;
+                    }
+                    .menu-collapse {
+                        font-size: 0.7rem;
+                    }
                 }
                 
                 .u-section-1 {
