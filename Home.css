@@ -1687,6 +1687,75 @@
                     min-height: 1180px;
                 }
                 
+                .u-section-8 .u-list-1 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .animate-fading {
+                    height: 45vw;
+                    width: 100vw;
+                    object-fit: cover;
+                }
+                
+                .u-repeater-2 {
+                    grid-template-columns: repeat(17, 100vw);
+                    transition: transform 0.5s ease-in-out;
+                }
+                
+                .u-repeater-2 .u-repeater-item-1 {
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                .slide-left {
+                    transform: translateX(-100vw);
+                }
+                
+                .badge {
+                    text-align: center;
+                    font-size: 60px;
+                    position: absolute;
+                    top: 0;
+                }
+                
+                .badge-white {
+                    color: #000!important;
+                    background-color: #ff1111!important
+                }
+                
+                .image-badge {
+                    display: inline-block;
+                    border-radius: 80%;
+                    height: 20px;
+                    width: 20px;
+                    border: 1.6px solid #ff1111;
+                }
+                
+                .image-badge:hover {
+                    background: #fff;
+                }
+                /* .u-repeater-2 {
+                    
+                    display: flex;
+                    align-items: center; 
+                } */
+                /* .u-section-8 .u-repeater-item {
+                    display: flex;
+                } */
+                
+                .u-section-8 .u-gallery-nav-2 {
+                    position: absolute;
+                    width: 62px;
+                    height: 62px;
+                    left: auto;
+                    top: 150px;
+                    background-image: none;
+                    right: 20px;
+                    padding: 8px;
+                }
+                
                 .u-section-8 .u-image-1 {
                     height: 811px;
                     margin-top: 0;
