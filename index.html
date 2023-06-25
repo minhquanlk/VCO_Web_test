@@ -583,17 +583,26 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
             var totalItems = repeaterItems.length;
             var currentItem = 0;
             var itemWidth = repeaterItems.outerWidth();
-
+            repeaterItems.clone().appendTo(repeater);
             // Thiết lập vị trí hiển thị ban đầu
             repeater.scrollLeft(currentItem * itemWidth);
 
             // Hàm thay đổi item hiển thị
             function changeItem() {
-                currentItem = (currentItem + 1) % totalItems;
+                var nextItem = (currentItem + 1) % totalItems;
+                if (nextItem === 0) {
+                    repeater.animate({
+                        scrollLeft: totalItems * itemWidth
+                    }, 1000, 'swing', function() {
+                        repeater.scrollLeft(0);
+                    });
+                } else {
+                    repeater.animate({
+                        scrollLeft: nextItem * itemWidth
+                    }, 1000, 'swing');
+                }
 
-                repeater.animate({
-                    scrollLeft: currentItem * itemWidth
-                }, 1000, 'swing');
+                currentItem = nextItem;
             }
 
             // Thực hiện thay đổi item sau mỗi khoảng thời gian
