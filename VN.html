@@ -113,13 +113,20 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
             </a>
             <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
                 <div class="u-nav-container-1">
-                    <div class="menu-collapse">
-                        <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-                            <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-                        </a>
+                    <div class="menu-collapse-1">
+                        <button class="dropbtn"><i class="fas fa-bars"></i> Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#carousel_cbf3" style="padding: 10px 20px;">Trang chủ</a>
+                            <a href="#carousel_5e03" style="padding: 10px 20px;">Dịch vụ</a>
+                            <a href="#carousel_b1df" style="padding: 10px 20px;">Ứng viên trẻ</a>
+                            <a href="#carousel_e734" style="padding: 10px 20px;">Cộng đồng tài năng</a>
+                            <a href="#carousel_5d44" style="padding: 10px 20px;">Khách hàng</a>
+                            <a href="#sec-e67c" style="padding: 10px 20px;">Phản hồi</a>
+                            <a href="#sec-865d" style="padding: 10px 20px;">Liên hệ</a>
+
+                        </div>
                     </div>
+
 
                     <div class="u-nav-container u-nav-flex">
                         <ul class="u-nav u-unstyled u-nav-1">
@@ -140,30 +147,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                         </ul>
 
                     </div>
-                    <div class="u-nav-container-collapse" id="slidenav">
-                        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                            <div class="u-inner-container-layout u-sidenav-overflow">
-                                <div class="u-menu-close"></div>
-                                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#carousel_cbf3" style="padding: 10px 20px;">Trang chủ</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#carousel_5e03" style="padding: 10px 20px;">Dịch vụ</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#carousel_b1df" style="padding: 10px 20px;">Ứng viên trẻ</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#carousel_e734" style="padding: 10px 20px;">Cộng đồng tài năng</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#carousel_5d44" style="padding: 10px 20px;">Khách hàng</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-843f" style="padding: 10px 20px;">Phản hồi</a>
-                                    </li>
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-865d" style="padding: 10px 20px;">Liên hệ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-                    </div>
+
                     <div class="u-nav-dropdown">
                         <select onchange="location = this.value;">
                          <option value="index.html" >EN</option>
@@ -196,7 +180,7 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                 document.getElementById("sec-80ad").style.transform = "translateY(" + 0 + "px)";
                 total = 0;
             }
-            console.log(total);
+
 
             prevScrollpos = currentScrollPos;
         }
@@ -507,18 +491,11 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
 
             </div>
 
-            <a class="u-gallery-nav u-gallery-nav-next u-icon-circle u-opacity u-opacity-70 u-palette-2-base u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button">
-                <span aria-hidden="true">
-              <svg viewBox="0 0 8 8"><path d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"></path></svg>
-            </span>
-                <span class="sr-only">
-              <svg viewBox="0 0 8 8"><path d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"></path></svg>
-            </span>
-            </a>
+
             <div class="badge" style="width:100%">
-                <a href="#slide-11" class="image-badge"></a>
-                <a href="#slide-21" class="image-badge"></a>
-                <a href="#slide-31" class="image-badge"></a>
+                <span class="image-badge"></span>
+                <span class="image-badge"></span>
+                <span class="image-badge"></span>
                 <span class="image-badge"></span>
                 <span class="image-badge"></span>
                 <span class="image-badge"></span>
@@ -542,41 +519,9 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
         </div>
     </section>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Lấy vị trí hiện tại của column đang được hiển thị
-            var repeater = document.getElementById("slideshow");
-            var currentColumn = Math.round(repeater.scrollLeft / window.innerWidth) + 1;
-
-            console.log("Vị trí hiện tại của column là: " + currentColumn);
-        });
-    </script>
-    <!-- <script>
-        // Lấy danh sách các phần tử ảnh
-        const slideshow = document.getElementById('slideshow');
-        const slides = slideshow.getElementsByClassName('u-repeater-item-1');
-        var currentIndex = 0;
-        var currentPosition = 0;
-        var scrollAmount = window.innerWidth;; // Độ dài cuộn tương ứng với một slide
-        var totalColumns = slides.length;
-        var interval = 2000;
-        var items = document.querySelectorAll('.u-repeat-item-1');
-
-
-        // Hàm lướt ảnh
-        function slideShow() {
-            // Ẩn ảnh hiện tại
-            currentPosition = (currentPosition + scrollAmount) % (totalColumns * scrollAmount);
-            slides.style.transform = "translateX(-" + currentPosition + "px)";
-            for (var i = 0; i < items.length; i++) {
-                items[i].style.transform = 'your-transform-value';
-            }
-        }
-
-        // Gọi hàm lướt ảnh sau mỗi khoảng thời gian
-        setInterval(slideShow, interval);
-    </script> -->
-    <script>
         $(document).ready(function() {
+            const spanElements = document.getElementsByClassName('image-badge');
+            var delay = 4000;
             var repeater = $('.u-repeater-2');
             var repeaterContainer = repeater.parent();
             var repeaterItems = repeater.find('.u-repeater-item-1');
@@ -589,6 +534,11 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
 
             // Hàm thay đổi item hiển thị
             function changeItem() {
+                delay = 4000;
+                var nextItem;
+                if (columnIndex != currentItem) {
+                    currentItem = columnIndex;
+                }
                 var nextItem = (currentItem + 1) % totalItems;
                 if (nextItem === 0) {
                     repeater.animate({
@@ -603,10 +553,44 @@ Over 1.5 billion raised with the help of our products, ​How can we help you?, 
                 }
 
                 currentItem = nextItem;
+                for (let i = 0; i < spanElements.length; i++) {
+                    const span = spanElements[i];
+
+                    span.addEventListener('click', function() {
+                        repeater.animate({
+                            scrollLeft: i * itemWidth
+                        }, 300, 'swing');
+
+                    });
+                }
             }
+            window.addEventListener('resize', function() {
+                itemWidth = repeaterItems.outerWidth();
+                currentItem = 0;
+                repeater.scrollLeft(0);
+            });
+
 
             // Thực hiện thay đổi item sau mỗi khoảng thời gian
-            setInterval(changeItem, 3000); // 3 giây
+            setInterval(changeItem, delay); // 3 giây
+        });
+    </script>
+    <script>
+        const spanElements = document.getElementsByClassName('image-badge');
+        const repeater = document.querySelector('.u-repeater-2');
+        var columnIndex = 0;
+        repeater.addEventListener('scroll', function() {
+            var scrollPosition = repeater.scrollLeft;
+            var columnWidth = document.querySelector('.u-repeater-item-1').offsetWidth;
+            columnIndex = Math.floor(scrollPosition / columnWidth);
+            spanElements[columnIndex].style.background = "red";
+            for (let i = 0; i < spanElements.length; i++) {
+                if (i === columnIndex) {
+                    spanElements[i].style.background = "red";
+                } else {
+                    spanElements[i].style.background = "transparent";
+                }
+            }
         });
     </script>
     <section class="u-align-center u-clearfix u-palette-1-base u-section-11" id="sec-e67c">
