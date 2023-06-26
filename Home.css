@@ -79,7 +79,7 @@
                     margin: -76px 0 40px auto;
                 } */
                 
-                .u-nav-container {
+                .u-nav-container-1 {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -1695,11 +1695,16 @@
                 .animate-fading {
                     height: 45vw;
                     width: 100vw;
-                    object-fit: cover;
+                    object-fit: contain;
+                    object-position: top;
+                }
+                
+                .imageshow-9 {
+                    object-position: top right;
                 }
                 
                 .u-repeater-2 {
-                    grid-template-columns: repeat(17, 100vw);
+                    grid-template-columns: repeat(12, 100vw);
                     transition: transform 0.5s ease-in-out;
                 }
                 
