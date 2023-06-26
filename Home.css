@@ -37,7 +37,7 @@
                 }
                 
                 @media (min-width: 1px) and (max-width: 1199px) {
-                    .u-header .u-nav-container .u-nav-flex {
+                    .u-header .u-nav-container-1 .u-nav-flex {
                         display: none;
                     }
                     .u-header .menu-collapse {
